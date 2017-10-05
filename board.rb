@@ -1,6 +1,7 @@
 require_relative "tile"
 
 class Board
+
   def self.empty_grid
     Array.new(9) do
       Array.new(9) { Tile.new(0) }
@@ -51,7 +52,7 @@ class Board
     grid.size
   end
 
-  def terminate?
+  def solved?
     rows.all? { |row| solved_set?(row) } &&
       columns.all? { |col| solved_set?(col) } &&
       squares.all? { |square| solved_set?(square) }
